@@ -18,46 +18,43 @@ dotenv.config();
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const connect = ()=> {
-    mongoose
-    .connect(process.env.MONGO_URL,{
-        useNewUrlParser: true,
-        useUnifiedTopology: true})
-    .then(() => {
-        console.log("connected to DB");
-    })
-    .catch((err)=>{throw err;
-    });
+const connect = () => {
+    mongoose.connect(process.env.MONGO_URL,
+        { useNewUrlParser: true }).then(() => {
+            console.log("Connected to DB");
+        }).catch(err => {
+            throw err;
+        });
 };
 console.log(connect)
 
-const options = {
+// const options = {
 
-    definition: {
-        openapi: '3.0.0',
-        info: {
-            title: 'valoutube',
-            version: '1.0.0',
-            description: 'An API made with express and documented with Swagger. For now, all roads can be only tested with insomnia, postman...',
-            license: {
-                name: 'MIT',
-            }
-        },
-        servers: [
-            {
-                url: 'http://localhost:3001',
-                description: 'Main production server'
-            },
-        ],
-    },
+//     definition: {
+//         openapi: '3.0.0',
+//         info: {
+//             title: 'valoutube',
+//             version: '1.0.0',
+//             description: 'An API made with express and documented with Swagger. For now, all roads can be only tested with insomnia, postman...',
+//             license: {
+//                 name: 'MIT',
+//             }
+//         },
+//         servers: [
+//             {
+//                 url: 'http://localhost:3001',
+//                 description: 'Main production server'
+//             },
+//         ],
+//     },
 
-    apis: ['./app/routers/*.js'],
+//     apis: ['./app/routers/*.js'],
 
-};
+// };
 
-const specs = swaggerJSdoc(options);
+// const specs = swaggerJSdoc(options);
 
-app.use('/docs', swaggerUi.serve, swaggerUi.setup(specs));
+// app.use('/docs', swaggerUi.serve, swaggerUi.setup(specs));
 
 app.use(cookieParser())
 app.use(express.json())
