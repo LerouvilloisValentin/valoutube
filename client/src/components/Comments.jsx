@@ -48,7 +48,9 @@ const Comments = ({videoId}) => {
   return (
     <Container>
       <NewComment>
+      {!currentUser ? null :
         <Avatar src={currentUser.img} />
+      }
         <Input placeholder="Add a comment..." />
       </NewComment>
       {comments.map(comment=>(
