@@ -21,15 +21,13 @@ dotenv.config({ path: path.resolve(__dirname, './.env') });
 const connect = ()=> {
     mongoose
     .connect(process.env.MONGO_URL,{
-        useNewUrlParser: true,
-        useUnifiedTopology: true})
+        useNewUrlParser: true})
     .then(() => {
         console.log("connected to DB");
     })
     .catch((err)=>{throw err;
     });
 };
-console.log(connect)
 
 const options = {
 
