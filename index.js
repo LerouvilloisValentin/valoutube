@@ -16,11 +16,12 @@ const app = express();
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
+const source = process.env.MONGO_URL;
 
-dotenv.config({ path: path.resolve(__dirname, './.env') });
+dotenv.config({path:__dirname+'/.env'});
 const connect = ()=> {
     mongoose
-    .connect(process.env.MONGO_URL,{
+    .connect(source,{
         useNewUrlParser: true})
     .then(() => {
         console.log("connected to DB");
