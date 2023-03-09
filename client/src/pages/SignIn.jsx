@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import axios from "axios";
-import {useDispatch, useSelector }from 'react-redux';
+import {useDispatch }from 'react-redux';
 import { loginFailure, loginStart, loginSuccess,  } from "../redux/userSlice";
 import { provider, auth } from "../firebase";
 import { signInWithPopup } from "firebase/auth";
@@ -73,7 +73,7 @@ const Link = styled.span`
 
 const SignIn = () => {
     const [name, setName] = useState("")
-    const [email, setEmail] = useState("")
+    const [ setEmail] = useState("")
     const [password, setPassword] = useState("")
 
     const dispatch = useDispatch()
