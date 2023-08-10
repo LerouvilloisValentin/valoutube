@@ -43,7 +43,8 @@ try {
 } catch (err) {
     next(err)
 }
-};
+}
+
 export const subscribe = async (req, res, next) => {
     try {
       await User.findByIdAndUpdate(req.user.id, {
