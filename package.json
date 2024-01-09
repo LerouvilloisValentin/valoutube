@@ -24,6 +24,7 @@
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "git": "^0.1.5",
+    "heroku": "^8.7.1",
     "js": "^0.1.0",
     "jsonwebtoken": "^8.5.1",
     "mongodb": "^5.1.0",
@@ -34,5 +35,8 @@
     "swagger-jsdoc": "^6.2.8",
     "swagger-ui-express": "^4.6.2",
     "vercel": "^28.16.7"
+  },
+  "devDependencies": {
+    "prettier": "3.0.3"
   }
 }

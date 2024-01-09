@@ -108,6 +108,7 @@ const SignIn = () => {
 
             });
         })
+        navigate("/")
         .catch((error) => {
           dispatch(loginFailure());
         });

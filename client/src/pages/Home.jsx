@@ -8,6 +8,7 @@ const Container = styled.div`
   flex-wrap: wrap;
 `;
 
+
 const Home = ({type}) => {
   const [videos, setVideos] = useState([]);
 
@@ -21,11 +22,27 @@ const Home = ({type}) => {
 
 
   return (
-    <Container>
-      {Array.isArray(videos)
-        ? videos.map((video) => <Card key={video?._id} video={video} />)
-        : null}
-    </Container>
+    <>
+      <Container>
+        {Array.isArray(videos)
+          ? videos.map((video) => <Card key={video?._id} video={video} />)
+          : null}
+
+      </Container>
+          {/* static video */}
+    <video controls width="650" height="500">
+      <source 
+
+        src="assets\screen-capture.webm" 
+        type="video/webm" />
+
+      <p>
+            Votre navigateur ne prend pas en charge les vidéos HTML5. Voici
+        <a href="assets\screen-capture.webm">un lien pour télécharger la vidéo</a>.
+      </p>
+    </video>  
+          
+  </> 
   );
 };
 
