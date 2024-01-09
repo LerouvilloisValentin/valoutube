@@ -11,7 +11,7 @@
   "type": "module",
   "scripts": {
     "start": "node index.js",
-    "build": "cd client && npm install && npm run build && npm run start"
+    "build": "cd client && npm run build && npm run start"
   },
   "author": "",
   "license": "ISC",
